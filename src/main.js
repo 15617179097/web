@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import qs from 'qs'
+import echarts from 'echarts'
 
 import './plugins/element.js'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -40,7 +41,7 @@ Vue.prototype.$http = axios
 Vue.prototype.$qs = qs
 
 Vue.config.productionTip = false
-
+Vue.prototype.$echarts = echarts
 new Vue({
   router,
   render: h => h(App)
