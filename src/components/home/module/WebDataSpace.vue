@@ -32,14 +32,14 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "网站访问数据",
-          subtext: "Http://www.euiadmin.com",
+          text: "网站预约数据",
+          subtext: "",
         },
         tooltip: {
           trigger: "axis",
         },
         legend: {
-          data: ["访问量", "登录人数"],
+          data: ["预约次数", "访问人数"],
         },
         toolbox: {
           show: true,
@@ -55,30 +55,30 @@ export default {
           {
             type: "category",
             data: [
-              "0:00",
-              "1:00",
-              "2:00",
-              "3:00",
-              "4:00",
-              "5:00",
-              "6:00",
-              "7:00",
-              "8:00",
-              "9:00",
-              "10:00",
-              "11:00",
-              "12:00",
-              "13:00",
-              "14:00",
-              "15:00",
-              "16:00",
-              "17:00",
-              "18:00",
-              "19:00",
-              "20:00",
-              "21:00",
-              "22:00",
-              "23:00",
+              "1月",
+              "1月",
+              "2月",
+              "2月",
+              "3月",
+              "3月",
+              "4月",
+              "4月",
+              "5月",
+              "5月",
+              "6月",
+              "6月",
+              "7月",
+              "7月",
+              "8月",
+              "8月",
+              "9月",
+              "9月",
+              "10月",
+              "10月",
+              "11月",
+              "11月",
+              "12月",
+              "12月",
             ],
           },
         ],
@@ -89,7 +89,7 @@ export default {
         ],
         series: [
           {
-            name: "访问量",
+            name: "预约次数",
             type: "bar",
             data: [
               Math.ceil(Math.random() * 1000),
@@ -129,7 +129,7 @@ export default {
             },
           },
           {
-            name: "登录人数",
+            name: "访问人数",
             type: "bar",
             data: [
               Math.ceil(Math.random() * 100),
@@ -180,8 +180,8 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "网站访问用户类别",
-          subtext: "EuiAdmin",
+          text: "座位签到",
+          subtext: "admin",
           left: "center",
         },
         tooltip: {
@@ -191,7 +191,7 @@ export default {
         legend: {
           orient: "vertical",
           left: "left",
-          data: ["超级管理员", "管理员", "作者", "普通用户", "普通用户","访客"],
+          data: ["签到", "未签到"],
         },
         series: [
           {
@@ -200,11 +200,10 @@ export default {
             radius: "55%",
             center: ["50%", "60%"],
             data: [
-              { value: Math.ceil(Math.random() * 1000), name: "超级管理员" },
-              { value: Math.ceil(Math.random() * 1000), name: "管理员" },
-              { value: Math.ceil(Math.random() * 1000), name: "作者" },
-              { value: Math.ceil(Math.random() * 1000), name: "普通用户" },
-              { value: Math.ceil(Math.random() * 1000), name: "访客" },
+             
+             
+              { value: Math.ceil(Math.random() * 1000), name: "签到" },
+              { value: Math.ceil(Math.random() * 1000), name: "未签到" },
             ],
             emphasis: {
               itemStyle: {
@@ -226,6 +225,9 @@ export default {
 </script>
 <style scoped>
 .card {
-  min-height: 50vh;
+  min-height: 70vh;
+}
+.el-card{
+  margin-top:10px;
 }
 </style>

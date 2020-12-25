@@ -1,6 +1,6 @@
 <template>
       <el-container>
-        <el-aside :width="isCollapse? '80px':'250px'">
+        <el-aside :width="isCollapse? '80px':'215px'">
               <el-menu
                 background-color="#304156"
                 text-color="#fff"
@@ -56,6 +56,7 @@
         <el-badge is-dot class="item"></el-badge>
       </el-menu-item>
 
+       
 
       </el-menu>
                 <h3>{{username}}</h3>
@@ -82,6 +83,7 @@ export default {
       username: window.sessionStorage.getItem('username')
     }
   },
+  
   components: {
   },
   created() {
