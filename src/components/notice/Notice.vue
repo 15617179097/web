@@ -25,6 +25,16 @@
       <el-table-column prop="title" label="标题"> </el-table-column>
       <el-table-column prop="content" label="内容"></el-table-column>
       <el-table-column prop="time" label="时间"> </el-table-column>
+      <el-table-column  label="类型">
+          <template slot-scope="scope">
+            <el-tag v-if="scope.row.state===0" type="success">通知公告</el-tag>
+            <el-tag v-if="scope.row.state===1" type="success">资源动态</el-tag>
+            <el-tag v-if="scope.row.state===2" type="success">活动信息</el-tag>
+            <el-tag v-if="scope.row.state===3" type="success">初来乍到</el-tag>
+            <el-tag v-if="scope.row.state===4" type="success">跃跃欲试</el-tag>
+            <el-tag v-if="scope.row.state===5" type="success">渐入佳境</el-tag>
+          </template>
+      </el-table-column>
       <el-table-column  label="操作">
          <template slot-scope="scope">
             <el-tooltip class="item" effect="dark" content="修改" placement="top">
