@@ -1,32 +1,42 @@
 <template>
-  <div class="login_context">
-    <div class="login_box">
-      <div class="img_box">
-        <img src="../assets/logo.jpg" alt="">
+  <div class="login_context" >  
+        <img src="../assets/img/d.png" alt="">
+  <div class="box">  
+      <div class="login_box">
+         <img src="../assets/img/box.png" alt="">
+            <div align="center" style="width:380px;height:200px;margin: -405px -260px -400px 280px" >
+            <h1>西亚斯 · 内部登陆系统</h1>
+            <h2>员工登陆 </h2>
+            <p>{{ login_adress }}</p>
+          </div>
+          <el-form :model="loginFrom" :rules="loginFromRules" ref="loginFromRulesRef">
+            <el-form-item  prop="username">
+              <el-input v-model="loginFrom.username" prefix-icon="iconfont icon-yonghu" placeholder="请输入用户名"></el-input>
+            </el-form-item>
+            <el-form-item  prop="password">
+              <el-input v-model="loginFrom.password" type="password" prefix-icon="iconfont icon-password" placeholder="请输入密码"></el-input>
+            </el-form-item>
+            <div align="right" style="width:288px; height:32px; margin:" >
+            <p>忘记密码？</p>
+            </div>
+            <el-form-item class="but_box" style="width: 94%; margin-bottom:60px;">
+              <el-button type="primary" @click="login" style="width: 280px">登陆</el-button> 
+            </el-form-item>
+          </el-form>
+          </div>
       </div>
-      <el-form :model="loginFrom" :rules="loginFromRules" ref="loginFromRulesRef">
-        <el-form-item  prop="username">
-          <el-input v-model="loginFrom.username" prefix-icon="iconfont icon-yonghu" placeholder="请输入用户名"></el-input>
-        </el-form-item>
-        <el-form-item  prop="password">
-          <el-input v-model="loginFrom.password" type="password" prefix-icon="iconfont icon-password" placeholder="请输入密码"></el-input>
-        </el-form-item>
-        <el-form-item class="but_box">
-          <el-button type="primary" @click="login">登陆</el-button>
-          <el-button  @click="loginResetForm">重置</el-button>
-        </el-form-item>
-      </el-form>
-    </div>
   </div>
+  
 </template>
 
 <script>
 export default {
   data () {
     return {
+    
       loginFrom: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       loginFromRules: {
         username: [
@@ -39,6 +49,7 @@ export default {
         ]
       }
     }
+    
   },
   components: {
 
@@ -67,48 +78,87 @@ export default {
 </script>
 
 <style scoped lang="less">
+
   .login_context{
-    background-color: #6f89A2;
-    height: 100%;
+   position: fixed;
+.box{  
+      width: 660px;
+      height: 420px;
+      top:50%;
+      left: 50%;
 
     .login_box{
-      border-radius: 5px;
-      position: absolute;
+      position: fixed;
+      background-color:#fff ;
       left: 50%;
+      top:45%;
+      transform: translate(-50%,-50%);
+      width: 660px;
+      height: 420px;
+    h1 {
+  color: rgb(121, 117, 117);
+  height: 220px;
+  font-size: 20px;
+  
+}
+  h2 {
+  color: rgb(121, 117, 117);
+  height: 220px;
+  font-size: 13px;
+  margin: -200px;
+}
+p {
+color: rgb(121, 117, 117);
+  height: 25px;
+  font-size: 13px;
+  left: 75%;
+  
+}
+     }
+    
+     
+} 
+    /*   .left_box{
+      position: absolute;
+      left: 38%;
       top:50%;
       transform: translate(-50%,-50%);
-      padding: 5px;
-      width: 450px;
-      height: 300px;
-      background-color: #fff;
+      width: 280px;
+      height: 420px;
+     
+      }
+    .login_box{
+     
+      position: absolute;
+      left: 58%;
+      top:50%;
+      transform: translate(-50%,-50%);
+      width: 380px;
+      height: 420px;
 
-      .img_box{
-        position: absolute;
-        top: -30%;
-        left: 50%;
-        transform: translate(-50%);
-        border: 5px solid #ccc;
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        img{
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        }
-      }
+      background-color: #fff;
+      
+     }
+    */
+
       .el-form{
-        position: absolute;
+        position: fixed;
         bottom: 0;
-        width: 100%;
-        padding: 0 15px;
+        width: 360px;
+        padding: 0 30px;
         box-sizing:border-box;
+        left: 45%;
+        top: 40%;
       }
+     
       .but_box{
         display: flex;
         justify-content:flex-end;
+        width: 50%;
       }
+     
+      
     }
-  }
+  
   
 </style>
