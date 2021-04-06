@@ -5,10 +5,22 @@
       :visible.sync="noticeVisible"
       width="50%"
       @close="handleClose">
-      <el-form ref="noticeListRef" :model="noticeList" :rules="noticeListRules" label-width="80px">
+      <el-form ref="noticeListRef" style="height: 400px;" :model="noticeList" :rules="noticeListRules" label-width="80px">
         <el-form-item label="标题" prop="title">
           <el-input v-model="noticeList.title"></el-input>
         </el-form-item>
+
+        <el-form-item label="类型">
+          <el-select v-model="state" placeholder="请选择">
+          <el-option
+              v-for="item in statuItem"
+              :key="item.state"
+              :label="item.title"
+              :value="item.state">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        
         <el-form-item label="省份" v-if="this.schoolState">
         <el-select v-model="value" placeholder="请选择省份" @change="changeProvince">
           <el-option
@@ -34,7 +46,7 @@
           <!-- <el-input v-model="noticeList.content" type="textarea"></el-input> -->
         </el-form-item>
       </el-form>
-      <span slot="footer" class="dialog-footer">
+      <span slot="footer" class="dialog-footer" style="zin">
         <el-button @click="noticeVisible = false">取 消</el-button>
         <el-button type="primary" @click="clickFrom">确 定</el-button>
       </span>
@@ -74,6 +86,34 @@ export default {
   },
   data() {
     return {
+      statuItem:[
+        {
+          state:0,
+          title:"通知公告"
+        },
+        {
+          state:1,
+          title:"资源动态"
+        },
+        {
+          state:2,
+          title:"2活动信息"
+        },
+        {
+          state:3,
+          title:"初来乍到"
+        },
+        {
+          state:4,
+          title:"跃跃欲试"
+        },
+        {
+          state:5,
+          title:"渐入佳境"
+        }
+        ],
+        state:0,
+        // 0:通知公告 1:资源动态 2活动信息 3 初来乍到 4 跃跃欲试 5 渐入佳境)
       schoolNames:[],
       schoolNameV:'',
       value:'',
@@ -172,5 +212,8 @@ export default {
 <style scoped lang="less">
   .el-form{
     height: 300px;
+  }
+  .el-dialog__body{
+    height: 400px;
   }
 </style>
