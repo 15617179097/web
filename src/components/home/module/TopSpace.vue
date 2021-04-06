@@ -36,8 +36,8 @@ export default {
           card_cycle: "年",
           card_cycle_back_color: "#E6A23C",
           bottom_title: "总用户",
-          vist_num: Math.ceil(Math.random() * 1000),
-          vist_all_num: Math.ceil(Math.random() * 10000),
+          vist_num: Math.ceil(15),
+          vist_all_num: Math.ceil(103),
           vist_all_icon: "el-icon-data-line",
         },
         {
@@ -74,6 +74,7 @@ export default {
       ],
     };
   },
+  
 };
 </script>
 <style scoped>
@@ -86,7 +87,7 @@ export default {
   padding-left: 10px;
 }
 div{
-  margin-top:5px;
+  margin-top:8px;
 }
 
 

@@ -1,5 +1,5 @@
 <template>
-   <div> 
+   <div class="app-container"> 
     <el-card class="box-card">
       <!-- 面包屑导航 -->
       <Breadcrumb>
@@ -137,7 +137,7 @@ export default {
       queryItem:{
         query:'',
         pagenum:1,
-        pagesize:5
+        pagesize:10
       },
       addClassroomVisible:false,
       classroom:{
@@ -294,6 +294,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+.app-container{
+margin-top: 50px;
+}
   .el-row{
     .el-col{
       text-align: center;
@@ -307,4 +310,5 @@ export default {
       }
     }
   }
+
 </style>

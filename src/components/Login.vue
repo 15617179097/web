@@ -1,43 +1,70 @@
+
 <template>
-  <div class="login_context" >  
-        <img src="../assets/img/d.png" alt="">
-  <div class="box">  
-      <div class="login_box">
-         <img src="../assets/img/box.png" alt="">
-            <div align="center" style="width:380px;height:200px;margin: -405px -260px -400px 280px" >
-            <h1>西亚斯 · 内部登陆系统</h1>
-            <h2>员工登陆 </h2>
-            <p>{{ login_adress }}</p>
+  <div class="login_context" align="center">  
+        <img width="100%" height="100%" src="../assets/img/login-bg.jpg" alt="">       
+  <div class="box" align="center">  
+      <div class="login_box" align="center">
+        <img src="../assets/img/sias1.jpg" alt="">
+            <div class="big" align="center">
+       <p>欢迎您！</p>     
           </div>
-          <el-form :model="loginFrom" :rules="loginFromRules" ref="loginFromRulesRef">
-            <el-form-item  prop="username">
-              <el-input v-model="loginFrom.username" prefix-icon="iconfont icon-yonghu" placeholder="请输入用户名"></el-input>
+          <el-form :model="loginFrom" :rules="loginFromRules" 
+          ref="loginFromRulesRef"       
+          >
+            <el-form-item  prop="username" >             
+              <el-input v-model.trim="loginFrom.username"
+               prefix-icon="iconfont icon-denglu" 
+               placeholder="请输入用户名"
+             
+               >
+               </el-input>
+               
             </el-form-item>
-            <el-form-item  prop="password">
-              <el-input v-model="loginFrom.password" type="password" prefix-icon="iconfont icon-password" placeholder="请输入密码"></el-input>
+            <el-form-item  prop="password"  style="height:40px">
+              <el-input 
+              v-model.trim="loginFrom.password"
+              
+               :type="flag?'test':'password'" 
+               prefix-icon="iconfont icon-mima" 
+               placeholder="请输入密码"
+ 
+               >
+              <i slot="suffix" :class="[flag?'el-icon-minus':'el-icon-view']" style="margin-top:8px;font-size:18px;" autocomplete="auto" @click="flag=!flag" />
+—
+               </el-input>
+               
             </el-form-item>
-            <div align="right" style="width:288px; height:32px; margin:" >
-            <p>忘记密码？</p>
-            </div>
-            <el-form-item class="but_box" style="width: 94%; margin-bottom:60px;">
-              <el-button type="primary" @click="login" style="width: 280px">登陆</el-button> 
-            </el-form-item>
-          </el-form>
-          </div>
+           <el-form-item align="left" style="height:18px">
+            <el-checkbox v-model="remember_password">记住密码</el-checkbox>
+          </el-form-item>
+            <el-form-item class="but_box"  style="width: 100%">
+              <el-button type="primary" @click="login" style="width: 520px ;height: 50px">登陆</el-button> 
+            </el-form-item>           
+          </el-form> 
+          </div>   
+          
       </div>
+ <a href="https://beian.miit.gov.cn/"  target="_blank"><center>备案编号：豫ICP备2021003442号</center></a>
   </div>
   
 </template>
 
-<script>
+<script type="text/javascript">
+
 export default {
-  data () {
+  data () {  
     return {
+     
+       flag: false,
+      
+    remember_password: false,
     
       loginFrom: {
         username: 'admin',
-        password: '123456'
+        password: '123456',
+      
       },
+      
       loginFromRules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
@@ -46,21 +73,21 @@ export default {
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
           { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
-        ]
+        ],
+      
       }
+      
     }
-    
-  },
+  }, 
   components: {
-
+      
   },
-  methods: {
+  methods: { 
+ 
     async login() {
-
-      const {data :res} = await this.$http.post("login",this.$qs.stringify(this.loginFrom))
+      const {data :res} = await this.$http.post("login",this.$qs.stringify(this.loginFrom)) 
       if (res.code!==200)
         return this.$message.error(res.msg)
-
       // token存入ssionStorage
       window.sessionStorage.setItem("token",res.data.token)
       window.sessionStorage.setItem("username",res.data.username)
@@ -70,10 +97,10 @@ export default {
       this.$router.push('/home')
       this.$message.success("登陆成功！！")
     },
-    loginResetForm(){
-      this.$refs.loginFromRulesRef.resetFields();
-    }
+    //判断渲染，true:暗文显示，false:明文显示
   },
+
+  
 }
 </script>
 
@@ -81,6 +108,9 @@ export default {
 
   .login_context{
    position: fixed;
+   width: 100%;
+   background-size: 100% 100%;
+
 .box{  
       width: 660px;
       height: 420px;
@@ -93,69 +123,43 @@ export default {
       left: 50%;
       top:45%;
       transform: translate(-50%,-50%);
-      width: 660px;
+      width: 608px;
       height: 420px;
-    h1 {
-  color: rgb(121, 117, 117);
-  height: 220px;
+      border-radius:10px;
+        .el-form{
+        padding: 0px 30px;
+        float:left;
+        .el-input{
+       width: 530px;
+       height: 50px;
+         font-size: 50px;
+        }
+        /deep/ .el-input__inner{
+    padding: 0 38px;
+    height: 52px;
+     font-size: 20px;
+ }
+  
+      }
+       
+    
+    
+    p {
+  color: rgb(75, 66, 66);
+  height: 20px;
   font-size: 20px;
+  margin:0px 2px 10px 2px
   
 }
-  h2 {
-  color: rgb(121, 117, 117);
-  height: 220px;
-  font-size: 13px;
-  margin: -200px;
-}
-p {
-color: rgb(121, 117, 117);
-  height: 25px;
-  font-size: 13px;
-  left: 75%;
-  
-}
+ 
+
+
      }
     
      
 } 
-    /*   .left_box{
-      position: absolute;
-      left: 38%;
-      top:50%;
-      transform: translate(-50%,-50%);
-      width: 280px;
-      height: 420px;
-     
-      }
-    .login_box{
-     
-      position: absolute;
-      left: 58%;
-      top:50%;
-      transform: translate(-50%,-50%);
-      width: 380px;
-      height: 420px;
+ 
 
-      background-color: #fff;
-      
-     }
-    */
-
-      .el-form{
-        position: fixed;
-        bottom: 0;
-        width: 360px;
-        padding: 0 30px;
-        box-sizing:border-box;
-        left: 45%;
-        top: 40%;
-      }
-     
-      .but_box{
-        display: flex;
-        justify-content:flex-end;
-        width: 50%;
-      }
      
       
     }

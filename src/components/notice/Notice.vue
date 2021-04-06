@@ -1,5 +1,5 @@
 <template>
- <el-card>
+ <el-card class="box-card">
    <!-- 面包屑导航 -->
     <Breadcrumb>
       <span slot="two">公告管理</span>
@@ -146,4 +146,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+.box-card{
+  margin-top: 50px;
+}
 </style>

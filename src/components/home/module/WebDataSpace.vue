@@ -22,6 +22,11 @@ export default {
   data() {
     return {};
   },
+   watch: {
+    value(newV,oldV){
+      this.getReports()
+    }
+  },
   methods: {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
@@ -202,8 +207,8 @@ export default {
             data: [
              
              
-              { value: Math.ceil(Math.random() * 1000), name: "签到" },
-              { value: Math.ceil(Math.random() * 1000), name: "未签到" },
+              { value: Math.ceil(90), name: "签到" },
+              { value: Math.ceil(10), name: "未签到" },
             ],
             emphasis: {
               itemStyle: {
@@ -226,8 +231,10 @@ export default {
 <style scoped>
 .card {
   min-height: 70vh;
+  height: 500px;
 }
 .el-card{
-  margin-top:10px;
+  margin-top:20px;
+ 
 }
 </style>

@@ -62,7 +62,7 @@ export default {
       queryItem: {
         query: '',
         pagenum: 1,
-        pagesize: 1
+        pagesize: 5
       },
       //users
       userFeedbackList:[],
@@ -120,4 +120,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+.box-card{
+  margin-top: 50px;
+}
 </style>

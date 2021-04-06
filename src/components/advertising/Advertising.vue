@@ -1,5 +1,5 @@
 <template>
- <el-card>
+ <el-card class="box-card">
   <Breadcrumb>
     <span slot="two">广告模块</span>
     <span slot="three">广告列表</span>
@@ -65,7 +65,7 @@ export default {
       queryItem: {
         query: '',
         pagenum: 1,
-        pagesize: 1
+        pagesize: 5
       },
       total:0,
       
@@ -147,5 +147,8 @@ export default {
 <style scoped lang="less">
 .el-upload-list__item-thumbnail{
   width: 100px;
+}
+.box-card{
+  margin-top: 50px;
 }
 </style>

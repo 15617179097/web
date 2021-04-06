@@ -1,11 +1,12 @@
 <template>
   <div>
+    <el-card class="box-card">
     <!-- 面包屑导航 -->
     <Breadcrumb>
       <span slot="two">数据统计</span>
       <span slot="three">数据报表</span>
     </Breadcrumb>
-    <el-card class="box-card">
+    
       <el-row>
         <el-col :span="24">
           <div class="grid-content bg-purple-dark">
@@ -47,6 +48,7 @@ export default {
     Breadcrumb
   },
   methods: {
+    
     async getReports(){
       var myChart = echarts.init(document.getElementById('main'));
 
@@ -75,6 +77,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+.box-card{
+  margin-top: 50px;
+}
 .el-card{
   text-align: center;
 }

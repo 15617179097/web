@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="app-container">
     <!-- 面包屑导航 -->
+    <el-card class="box-card">
     <Breadcrumb>
       <span slot="two">用户管理</span>
       <span slot="three">管理员列表</span>
@@ -69,7 +70,9 @@
     <add-admin :schoolId="schoolId" :addVisible="addVisible" @add-visible="addVisibles" @add-success="addSuccess"></add-admin>
    <!-- 修改用户 -->
     <edit-admin :adminRow="adminRow" :editVisible="editVisible" @add-visible="editVisbles" @add-success="addSuccess"></edit-admin>
+      </el-card>
   </div>
+
 </template>
 
 <script>
@@ -82,6 +85,7 @@ import EditAdmin from './EditAdmin.vue'
 export default {
   data() {
     return {
+      username:[],
       adminRow:null,
       addVisible: false,
       editVisible: false,
@@ -89,7 +93,7 @@ export default {
       queryItem: {
         query: '',
         pagenum: 1,
-        pagesize: 1
+        pagesize: 5
       },
       total:0,
       admins:[],
@@ -199,4 +203,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+.app-container{
+margin-top: 50px;
+}
 </style>

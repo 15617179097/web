@@ -1,11 +1,12 @@
 <template>
  <div> 
+    <el-card class="box-card"> 
      <!-- 面包屑导航 -->
     <Breadcrumb>
       <span slot="two">权限管理</span>
       <span slot="three">权限列表</span>
     </Breadcrumb>
-    <el-card class="box-card"> 
+   
       <!-- 表格内容 -->
       <el-table
         :data="modularList" style="width: 100%" border stripe>
@@ -54,4 +55,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+.box-card{
+  margin-top: 50px;
+}
 </style>

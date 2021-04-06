@@ -1,11 +1,13 @@
 <template>
   <div>
-    <!-- 面包屑导航 -->
+    
+   
+    <el-card class="box-card">
+       <!-- 面包屑导航 -->
       <Breadcrumb>
         <span slot="two">预约管理</span>
         <span slot="three">预约座位</span>
       </Breadcrumb>
-    <el-card class="box-card">
       <!-- tabs页 -->
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <!-- 今日预约 -->
@@ -50,6 +52,8 @@ export default {
 </script>
 
 <style scoped lang="less">
-
+.box-card{
+  margin-top: 50px;
+}
 
 </style>

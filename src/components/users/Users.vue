@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div class="app-container"> 
     <el-card class="box-card">
       <!-- 面包屑导航 -->
       <Breadcrumb>
@@ -88,7 +88,7 @@ export default {
       queryItem: {
         query: '',
         pagenum: 1,
-        pagesize: 1
+        pagesize: 5
       },
       //users
       users:[],
@@ -160,4 +160,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+.app-container{
+margin-top: 50px;
+}
 </style>
