@@ -2,8 +2,8 @@
   <div class="user-activity">
     <div class="post">
       <div class="user-block">
-        <img class="img-circle" :src="'https://wpimg.wallstcn.com/57ed425a-c71e-4201-9428-68760c0537c4.jpg'+avatarPrefix">
-        <span class="username text-muted">Iron Man</span>
+        <img class="img-circle" :src="'https://sc04.alicdn.com/kf/U8b0eb0c169ca48518c60de7b286804c0X.jpg'+avatarPrefix">
+        <span class="username text-muted">admin</span>
         <span class="description">Shared publicly - 7:30 PM today</span>
       </div>
       <p>
@@ -29,8 +29,8 @@
     </div>
     <div class="post">
       <div class="user-block">
-        <img class="img-circle" :src="'https://wpimg.wallstcn.com/9e2a5d0a-bd5b-457f-ac8e-86554616c87b.jpg'+avatarPrefix">
-        <span class="username text-muted">Captain American</span>
+        <img class="img-circle" :src="'https://sc04.alicdn.com/kf/U87a12686c46e4b39b45b190f45846312s.jpg'+avatarPrefix">
+        <span class="username text-muted">xiaolo</span>
         <span class="description">Sent you a message - yesterday</span>
       </div>
       <p>
@@ -56,8 +56,8 @@
     </div>
     <div class="post">
       <div class="user-block">
-        <img class="img-circle" :src="'https://wpimg.wallstcn.com/fb57f689-e1ab-443c-af12-8d4066e202e2.jpg'+avatarPrefix">
-        <span class="username">Spider Man</span>
+        <img class="img-circle" :src="'https://ae03.alicdn.com/kf/Uc27597c47bff4ca38c0d617c4ef8f74fI.jpg'+avatarPrefix">
+        <span class="username">admin111</span>
         <span class="description">Posted 4 photos - 2 days ago</span>
       </div>
       <div class="user-images">
@@ -86,10 +86,10 @@ export default {
   data() {
     return {
       carouselImages: [
-        'https://wpimg.wallstcn.com/9679ffb0-9e0b-4451-9916-e21992218054.jpg',
-        'https://wpimg.wallstcn.com/bcce3734-0837-4b9f-9261-351ef384f75a.jpg',
-        'https://wpimg.wallstcn.com/d1d7b033-d75e-4cd6-ae39-fcd5f1c0a7c5.jpg',
-        'https://wpimg.wallstcn.com/50530061-851b-4ca5-9dc5-2fead928a939.jpg'
+        'https://ae04.alicdn.com/kf/U12a55bb3a26c481083df6e6ec16ece7c7.jpg',
+        'https://sc03.alicdn.com/kf/Uf9e7664e5b554d7a9e050b7aeb80b15fc.jpg',
+        'https://ae03.alicdn.com/kf/Ucba5d2203ec242cab9f2b8769a084e202.jpg',
+        'https://sc04.alicdn.com/kf/U7a45208e2e21404583bd13406128b4e1h.jpg'
       ],
       avatarPrefix,
       carouselPrefix

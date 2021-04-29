@@ -32,12 +32,12 @@
 //import { mapGetters } from 'vuex'
 import UserCard from './components/UserCard'
 import Activity from './components/Activity'
-import Timeline from './components/Timeline'
+
 import Account from './components/Account'
 
 export default {
   name: 'Profile',
-  components: { UserCard, Activity, Timeline, Account },
+  components: { UserCard, Activity,  Account },
   data() {
     return {
       user: {},
@@ -54,9 +54,9 @@ export default {
   methods: {
     getUser() {
       this.user = {
-        name: 'Super Admin',
+        name: 'admin',
         
-        email: 'admin@test.com',
+        email: '77777@qq.com',
        
       }
     }

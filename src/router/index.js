@@ -14,7 +14,7 @@ import Notice from '../components/notice/Notice.vue'
 import Subscribe from '../components/subscribe/Subscribe.vue'
 import QuerySubscribe from '../components/subscribe/QuerySubscribe.vue'
 import Rights from '../components/rights/Rights.vue'
-import Reports from '../components/reports/Reports.vue'
+
 import Advertising from '../components/advertising/Advertising.vue'
 import Profile from '../components/profile/index.vue'
 
@@ -78,10 +78,7 @@ const routes = [
         path: '/rights',
         component: Rights
       },
-      {
-        path: '/reports',
-        component: Reports
-      },
+     
       {
         path: '/advertising',
         component: Advertising

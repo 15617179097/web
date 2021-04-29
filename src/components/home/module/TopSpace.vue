@@ -36,8 +36,8 @@ export default {
           card_cycle: "年",
           card_cycle_back_color: "#E6A23C",
           bottom_title: "总用户",
-          vist_num: Math.ceil(15),
-          vist_all_num: Math.ceil(103),
+          vist_num: Math.ceil(5),
+          vist_all_num: Math.ceil(45),
           vist_all_icon: "el-icon-data-line",
         },
         {
@@ -56,8 +56,8 @@ export default {
           card_cycle: "周",
           card_cycle_back_color: "#67C23A",
           bottom_title: "预约总量",
-          vist_num: Math.ceil(Math.random() * 1000),
-          vist_all_num: Math.ceil(Math.random() * 10000),
+          vist_num: Math.ceil(Math.ceil(5) ),
+          vist_all_num: Math.ceil(Math.ceil(15) ),
           vist_all_icon: "el-icon-medal",
         },
         {
@@ -66,8 +66,8 @@ export default {
           card_cycle: "日",
           card_cycle_back_color: "#F56C6C",
           bottom_title: "座位总数",
-          vist_num: Math.ceil(Math.random() * 1000),
-          vist_all_num: Math.ceil(Math.random() * 10000),
+          vist_num: Math.ceil(Math.ceil(3644) ),
+          vist_all_num: Math.ceil(Math.ceil(3650)),
           vist_all_icon: "el-icon-coin",
         },
        

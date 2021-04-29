@@ -11,7 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/base.css'
 import './assets/iconfont.css'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8001/'
+axios.defaults.baseURL = 'http://112.124.111.59:8000/'
 axios.defaults.withCredentials = true
 axios.interceptors.request.use(config => {
   if (window.sessionStorage.getItem('token'))
